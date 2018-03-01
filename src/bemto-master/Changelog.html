@@ -1,0 +1,81 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Changelog.md</title>
+      </head>
+      <body>
+        <h1 id="bemto-changelog">Bemto changelog</h1>
+<h2 id="v2-1-0-2016-12-26-">v2.1.0 (2016-12-26)</h2>
+<ul>
+<li>Added support for prefix objects.</li>
+<li>Added settings for delimiters between classes.</li>
+<li>Fixed escaping for inline tags&#39; attribute values, #84.</li>
+</ul>
+<h2 id="v2-0-0-2016-12-18-">v2.0.0 (2016-12-18)</h2>
+<ul>
+<li>Now supporting Pug, released as <code>bemto.pug</code> in npm.</li>
+</ul>
+<h2 id="v1-0-3-2016-04-27-">v1.0.3 (2016-04-27)</h2>
+<ul>
+<li>Fixed improper boolean attributes for custom tags.</li>
+</ul>
+<h2 id="v1-0-2-2016-02-26-">v1.0.2 (2016-02-26)</h2>
+<ul>
+<li>Fixed incorrect behaviour of mixed blocks, #70.</li>
+<li>Fixed the incorrect rendering of falsey attribute in inline tags, #71.</li>
+</ul>
+<h2 id="v1-0-1-2016-02-12-">v1.0.1 (2016-02-12)</h2>
+<ul>
+<li>Fixed incorrect handling of class tags with numbers.</li>
+</ul>
+<h2 id="v1-0-0-2016-02-01-">v1.0.0 (2016-02-01)</h2>
+<ul>
+<li>Added a <code>bemto_scope</code> mixin for setting settings at a scope level.</li>
+<li>Added a way to redefine prefix on block/element level.</li>
+<li>Added a way to redefine tag&#39;s metadata in block&#39;s options.</li>
+<li>Added a <code>flat_elements</code> setting to allow elements of elements.</li>
+<li>Added a <code>role=&quot;presentation&quot;</code> for links with empty <code>alt</code>, via <a href="https://twitter.com/estellevw/status/685332992227540992">Estelle Weyl</a>.</li>
+<li>Added a <code>role=&quot;main&quot;</code> for the <code>&lt;main&gt;</code> tag.</li>
+<li>Added <code>output_element</code> and <code>output_modifier</code> for changing the syntax of the output delimiters.</li>
+<li><code>src</code>-less images now would have null gif inlined (or set to the given src).</li>
+<li>Changed the default way the tag is passed: using either a first uppercase class or an option object.</li>
+<li>Changed the settings to be a single object and not a bunch of variables.</li>
+<li>Changed the way custom tag works, properly rendering unknown tags (including self-closing if defined in options).</li>
+<li>Changed the way attribute-implied tags are handled.</li>
+<li>Changed the order of the classes in output (was: alphabet, now: the same as in source).</li>
+<li>Fixed a case when the context stack was incorrectly emptied.</li>
+<li>Fixed the jade-bug-hardcoded doctype.</li>
+<li>Fixed classless blocks.</li>
+<li>Fixed modifiers on elements with certain separators defined.</li>
+<li>Fixed the blockness of a textarea and a pre tags to prevent from extra whitespace to appear inside.</li>
+<li>Added Code of Conduct.</li>
+</ul>
+<h2 id="v0-2-3-2015-12-30-">v0.2.3 (2015-12-30)</h2>
+<ul>
+<li>Fixed the absence of the <code>time</code> tag.</li>
+</ul>
+<h2 id="v0-2-2-2015-05-05-">v0.2.2 (2015-05-05)</h2>
+<ul>
+<li>Fixed support for more html5 elements: <code>&lt;figure&gt;</code>, <code>&lt;figcaption&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;picture&gt;</code> and <code>&lt;source/&gt;</code>.</li>
+</ul>
+<h2 id="v0-2-1-2015-04-22-">v0.2.1 (2015-04-22)</h2>
+<ul>
+<li>Fixed <code>select</code> and <code>option</code> rendered as <code>div</code>s.</li>
+</ul>
+<h2 id="v0-2-0-2015-03-16-">v0.2.0 (2015-03-16)</h2>
+<ul>
+<li>Removed (before undocummented) automixing of current block on element blocks.</li>
+<li>Added auto inputs on <code>type</code> attribute, #38.</li>
+<li>Added <code>&lt;svg&gt;</code> to supported tags, #39.</li>
+</ul>
+<h2 id="v0-1-1-2015-03-03-">v0.1.1 (2015-03-03)</h2>
+<ul>
+<li>Fixed <code>&lt;hr&gt;</code> being replaced with <code>&lt;br&gt;</code>, #37.</li>
+</ul>
+<h2 id="v0-1-0-2014-05-16-">v0.1.0 (2014-05-16)</h2>
+<ul>
+<li>Initial version</li>
+</ul>
+
+      </body>
+    </html>
