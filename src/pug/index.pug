@@ -1,0 +1,184 @@
+include ../bemto-master/bemto
+include _var
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Medical
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans", rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css")
+    link(rel='stylesheet', href='styles/normalize.css')
+    link(rel='stylesheet', href='styles/all.min.css')
+  body
+    header.main-header
+      .header-top
+        .container-main
+          +b.menu-icon
+            +e.line
+            +e.line
+            +e.line
+          +b.UL.menu-header
+            for name in menuHeader
+              +e.LI.item
+                +e.A.link(href='')=name.link1
+          .menu-header__close
+          form.form.form-search(action='', method='post')
+            input.form-search__header(type='text', placeholder='Поиск по сайту')
+            svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='15', height='15')
+              image(width='15', height='15', xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABP0lEQVQ4T5XTv0vWURTH8Zc/BhXBiEanQqFBcG6SMkEhaSkRxUEQdAzBoWaDdNJRlEIRBEfBJRE3dRIHF+sPEJ2EJCILOQ/3q/d5UB/8Tvdyzvt8zvnc861x8z3GJN7jKS5xgCV8TfcsnZp068AmWrGLfTSiG8+wg7c4z+mAQ/EQTRjAVpZQm7qZwQb6K+FpfMTrCjDP+4IpvMJ2EQjlHzjDi7KByi+PcJrmn8jhf5jHh3vgCB3hJKmXUkP5T3JzvAr8E8foy5X38ATt+H9HgbYEfsanHB7DQjJk9ha4Ljndg+fJo+u26/EdXYgnierFe4biHHrxC6NYz5Xj3IIVvMHf1GJDWpAw9Dea01gjWC0Myzt9iXdp/jAy1vMbOrGGWJrwpVSgWM8qRpfCQ1jOCgw/BK4scPFQOAoMYjF+liv8PT8SPAdQMwAAAABJRU5ErkJggg==')
+          .wrap-signin-basket
+            +b.A.signin(href='')
+              svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='10.21', height='11.67')
+                defs
+                  path#a(d='M1319.12 29.67h-5.14c0-3.67 3.26-3.67 3.98-4.63l.08-.44c-1.01-.51-1.73-1.74-1.73-3.17 0-1.9 1.24-3.43 2.78-3.43 1.53 0 2.77 1.53 2.77 3.43 0 1.42-.7 2.64-1.7 3.16l.1.5c.79.9 3.93.97 3.93 4.58z')
+                use(xlink:href='#a', width='100%', height='100%', fill='#49b2e2', transform='translate(-1313.98 -18)')
+              +e.SPAN.cont Вход
+            +b.A.basket(href='')
+              svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='22', height='21')
+                image(width='22', height='21', xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAABnklEQVRIS63VPWgWQRDG8V+MESSF1gZUCEhEsRTETgSxMx9WYiWpBCu/GitNYiEhoCBaWIiBYBMSUEJAQWxSpQhY2VhooYKJNqKihgm7sBz3vuZ8s3DccjP7n9l5dva6sIJlTKa5rRhdOIqrGEzwK1sFzpxTeIrd+NspPDLOoxffcBmrHYKXSnCw3qSMP3cA3oneKvgxPqKTOg9hvAq+hDM4UWQ8gsNtdrCGqcI+hv1V8HE8rwh4DcfagKNso4V9AYtVcBZwAG//s84RaLgKzgLexEwCH/pHzWcxl3z34h121YGrAvbjIra12EGAXyXbhnAYqAPXCbjZqmwIh3N14BDwBZY2Syv8DuIW7taBs4BxKX1oCP+KafysA2cB7yDq12R8x49Y0Ao8getNiMk3SniyHThsfehJC+L9qyZQd/r2O72/pIusZcaZEWI8Q5zP2MWNAn4Wj/AH5zFfBm5ViuwTZ3o7HuBlCpAFfY/biNssWvpAE/BD7MGT9MT8UwJEy0d37sBpHGkC3peOT3RfHP57xeIQ6X7621zA6xK8Dl9XTVwyh+nhAAAAAElFTkSuQmCC')
+              +e.SPAN.cont Моя корзина
+              +e.SPAN.counter 0
+      .header-bottom
+        .container-main
+          a.logo(href='')
+            img(src='images/logo.png', alt='')
+          +b.UL.address
+            for name in address
+              +e.LI.item
+                +e.A.link(href='')=name.link1
+          +b.UL.phone
+            for name in phone
+              +e.LI.item
+                +e.A.link(href= name.link1)= name.link2
+                  +e.SPAN.desc= name.link3
+          +b.UL.hire
+            +e.LI.item Мы осуществляем прокат изделий:
+            +e.LI.item
+              +e.A.link(href='') Весы для новорожденных (...)
+              +e.A.link.hire__btn(href='') в прокат »
+      section.banner
+        .swiper-container
+          .swiper-wrapper
+            img.swiper-slide(src='images/banner.png', alt='')
+            img.swiper-slide(src='images/banner.png', alt='')
+            img.swiper-slide(src='images/banner.png', alt='')
+          .swiper-pagination.swiper-custom
+    main.primary-main
+      .container-main
+        .container
+          .masthead ассортимент нашей продукции
+          .content.assortment
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img1.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Массажные столы Vernam
+                  +e.UL.list
+                    for name in catalog1
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img2.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Товары для дома
+                  +e.UL.list
+                    for name in catalog2
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+                  +e.open__list(href='') Показать еще 15 категорий
+                  +e.UL.hide__list
+                    for name in hideList1
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img3.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Для здоровья и красоты
+                  +e.UL.list
+                    for name in catalog3
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img4.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Мебель медицинская
+                  +e.UL.list
+                    for name in catalog4
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+                  +e.open__list(href='') Показать еще 5 категорий
+                  +e.UL.hide__list
+                    for name in hideList2
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+        .container
+          .content
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img1.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Массажные столы Vernam
+                  +e.UL.list
+                    for name in catalog1
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img2.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Товары для дома
+                  +e.UL.list
+                    for name in catalog2
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+                  +e.open__list(href='') Показать еще 15 категорий
+                  +e.UL.hide__list
+                    for name in hideList1
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img3.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Для здоровья и красоты
+                  +e.UL.list
+                    for name in catalog3
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+            .col-1
+              +b.catalog
+                +e.img
+                  img(src='images/img4.png', alt='')
+                +e.list__wrap
+                  +e.A.title(href='') Мебель медицинская
+                  +e.UL.list
+                    for name in catalog4
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+                  +e.open__list(href='') Показать еще 5 категорий
+                  +e.UL.hide__list
+                    for name in hideList2
+                      +e.LI.item
+                        +e.A.link(href='')= name.link1
+        +b.btn
+          +e.A.catalog(href='') перейти в полный каталог продукции
+          +e.desc Еще 9 категорий медицинских товаров.
+    footer
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='scripts/mobile-menu.min.js')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js")
+    script(src='scripts/swiper-slider.min.js')

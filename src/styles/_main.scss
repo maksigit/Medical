@@ -1,0 +1,124 @@
+@import "../../node_modules/susy/sass/susy";
+
+.primary-main {
+  .container-main {
+    padding: 28px 15px 44px;
+  }
+}
+
+$susy: (
+        columns: 12,
+        gutters: 1/4,
+        math: fluid,
+        output: float,
+        gutter-position: after,
+        container: 100%,
+        debag: (
+                image: show,
+                color: rgba(#66f, .5),
+                output: background,
+                toggle: top right,
+        ),
+);
+
+.container {
+  @include container();
+
+  &:nth-child(2) {
+    border-top: 1px solid #e3e3e3;
+  }
+}
+
+.masthead {
+  text-align: center;
+  font: 1.4rem $primary-font;
+  text-transform: uppercase;
+  color: $emperor-color;
+}
+
+.col-1 {
+  @include span(12);
+  margin: 50px 0 20px 0;
+
+  @media (min-width: $screen-sm) {
+    @include span(6);
+    margin: 50px 0 20px 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    @include span(3);
+    margin: 50px 0 20px 0;
+  }
+}
+
+.catalog {
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+
+  &__title {
+    font: bold 1.8rem $primary-font;
+    color: $lochmara-color;
+    transition: .4s;
+
+    &:hover {
+      color: $cinnabar;
+    }
+  }
+
+  &__list {
+    margin-top: 35px;
+  }
+
+  &__item:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  &__link {
+    font: 1.6rem $primary-font;
+    color: $cod-gray-color;
+
+    &:hover {
+      color: $lochmara-color;
+      text-decoration: underline;
+    }
+  }
+
+  &__open__list {
+    margin-top: 25px;
+    font: bold 1.2rem $primary-font;
+    color: $lochmara-color;
+    border-bottom: 1px dashed $lochmara-color;
+  }
+
+  &__hide__list {
+    display: none;
+  }
+
+}
+
+.catalog__list__wrap {
+  max-width: 180px;
+}
+
+.btn {
+  text-align: center;
+
+  &__catalog {
+    padding: 25px 60px;
+    margin: 40px auto 0;
+    background: $lochmara-color;
+    text-transform: uppercase;
+    color: $white-color;
+    font: 1.6rem $primary-font;
+  }
+  
+  &__desc {
+    font: 1.4rem $primary-font;
+    color: $dusty-gray-color;
+    margin-top: 20px;
+  }
+}
+
+

@@ -10,21 +10,22 @@ const mqpacker = require('css-mqpacker');
 const browserSync = require('browser-sync').create();
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 
 gulp.task('styles', function () {
     var proccesors = [
-        autoprefixer({browsers: ['last 2 version']}),
         mqpacker(),
+        autoprefixer({browsers: ['last 2 version']})
     ];
     return gulp.src('src/styles/all.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss(proccesors))
-        .pipe(sourcemaps.write())
         .pipe(csso())
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('build/styles'));
 });
 gulp.task('norm', function () {
@@ -36,6 +37,7 @@ gulp.task('scripts', function () {
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(uglify())
         .pipe(gulp.dest('build/scripts'));
 });
 gulp.task('img', function () {
@@ -43,7 +45,7 @@ gulp.task('img', function () {
         .pipe(gulp.dest('build/images/'));
 });
 gulp.task('pug', function () {
-    return gulp.src('src/index.pug')
+    return gulp.src('src/pug/index.pug')
         .pipe(pug())
         .pipe(gulp.dest('build/'));
 });
@@ -57,7 +59,7 @@ gulp.task('serve', function (){
 
 gulp.task('watch', function (){
     gulp.watch('src/styles/**/*.*', gulp.series('styles'));
-    gulp.watch('src/*.pug', gulp.series('pug'));
+    gulp.watch('src/pug/*.pug', gulp.series('pug'));
     gulp.watch('src/scripts/**/*.*', gulp.series('scripts'));
     gulp.watch('src/images/**', gulp.series('img'));
 });
