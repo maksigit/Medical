@@ -1,12 +1,16 @@
 include ../bemto-master/bemto
 include _var
 
-  include _head
-  include _header
-  include _main
+doctype html
+html(lang='en')
+  include blocks/_head
+  body
+    include blocks/_header
+    include blocks/_main
 
   footer
 
-  script(src='scripts/libs.min.js')
-  script(src='scripts/mobile-menu.min.js')
-  script(src='scripts/swiper-slider.min.js')
+
+script(src='scripts/libs.min.js')
+script(src='scripts/mobile-menu.min.js')
+script(src='scripts/swiper-slider.min.js')
