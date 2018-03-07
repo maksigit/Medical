@@ -40,16 +40,12 @@ html {
   right: 0;
   top: 0;
   bottom: 0;
-  padding: 15px 25px;
   z-index: 3;
-
-  &__item {
-    padding: 10px 0;
-  }
+  padding: 25px;
 
   &__link {
     color: $white-color;
-    font: 1.2rem $primary-font;
+    font: 1.2rem/36px $primary-font;
     text-transform: uppercase;
 
     &:hover {
@@ -64,10 +60,11 @@ html {
     margin: auto;
     background: none;
     position: static;
+    padding: 0;
 
     &__item {
       border-left: 1px solid #e1e1e1;
-      padding: 0 25px;
+
       display: flex;
       align-items: center;
     }
@@ -78,14 +75,14 @@ html {
 
     &__link {
       color: $emperor-color;
-      font: 1.2rem $primary-font;
+      font: 1.2rem/36px $primary-font;
       text-transform: uppercase;
+      padding: 0 25px;
     }
   }
 }
 
-
-.menu-header__close {
+.menu-header-close {
   display: none;
   width: 15px;
   height: 15px;
@@ -112,10 +109,10 @@ html {
 
   &__header {
     width: 190px;
-    padding: 10px 10px 10px 35px;
+    padding: 0 10px 0 35px;
     border-radius: 50px;
     border: 1px solid transparent;
-    font: 1.2rem $primary-font;
+    font: 1.2rem/29px $primary-font;
     box-sizing: border-box;
 
     &:focus {
@@ -124,9 +121,12 @@ html {
     }
   }
 
-  svg {
+  &__button {
     position: absolute;
     left: 10px;
+    background: none;
+    padding: 0;
+    border: none;
   }
 
   @media (min-width: 544px) {
@@ -174,7 +174,7 @@ html {
   align-items: center;
 
   &__cont {
-    margin-left: 10px                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
+    margin-left: 10px;
   }
 
   &__counter {
@@ -210,9 +210,7 @@ html {
     margin-top: 10px;
   }
 
-
-
-  &__link{
+  &__link {
     font: 1.4rem $primary-font;
     color: $cod-gray-color;
   }
@@ -261,8 +259,13 @@ html {
     color: $lochmara-color;
     max-width: 165px;
     font: bold 1.2rem $primary-font;
-    padding-left: 40px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+
+    img {
+      padding-right: 9px;
+    }
   }
 
   &__btn {

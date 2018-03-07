@@ -11,6 +11,7 @@ const browserSync = require('browser-sync').create();
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 
 gulp.task('styles', function () {
     var proccesors = [
@@ -28,8 +29,9 @@ gulp.task('styles', function () {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('build/styles'));
 });
-gulp.task('norm', function () {
-    return gulp.src('src/styles/normalize.css')
+gulp.task('libscss', function () {
+    return gulp.src(['node_modules/swiper/dist/css/swiper.min.css', 'src/styles/normalize.css'])
+        .pipe(concat('libs.min.css'))
         .pipe(gulp.dest('build/styles'));
 });
 gulp.task('scripts', function () {
@@ -39,6 +41,12 @@ gulp.task('scripts', function () {
         }))
         .pipe(uglify())
         .pipe(gulp.dest('build/scripts'));
+});
+gulp.task('libjs', function () {
+    return gulp.src(['node_modules/jquery/dist/jquery.min.js', 'node_modules/swiper/dist/js/swiper.min.js'])
+        .pipe(concat('libs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('build/scripts'))
 });
 gulp.task('img', function () {
     return gulp.src('src/images/*.*')
@@ -64,6 +72,6 @@ gulp.task('watch', function (){
     gulp.watch('src/images/**', gulp.series('img'));
 });
 
-gulp.task('build', gulp.series('pug', 'norm', 'styles', 'scripts', 'img', gulp.parallel('watch', 'serve')));
+gulp.task('build', gulp.series('pug', 'libscss', 'styles', 'libjs', 'scripts', 'img', gulp.parallel('watch', 'serve')));
 
 
