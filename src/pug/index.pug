@@ -5,10 +5,14 @@ doctype html
 html(lang='en')
   include blocks/_head
   body
+    include blocks/_svg
     include blocks/_header
-    include blocks/_main
-
+  main
+    include blocks/_primary-main
+    include blocks/_offer
+    include blocks/_desc
   footer
+    include blocks/_footer
 
 
 script(src='scripts/libs.min.js')

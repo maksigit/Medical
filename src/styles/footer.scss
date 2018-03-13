@@ -1,0 +1,140 @@
+//
+//@mixin container($col) {
+//  @include span($col);
+//
+//  @media (min-width: $screen-sm) {
+//    @include span($col/2);
+//  }
+//
+//  @media (min-width: $screen-lg) {
+//    @include span($col/4);
+//  }
+//}
+//
+//.item {
+//  @include container(12);
+//}
+//
+.main-footer {
+  background: #373737;
+  padding: 40px 0 50px;
+}
+
+.footer-top {
+  .container-main {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.address-footer {
+  max-width: 293px;
+  margin: auto;
+
+  &__item:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &__link {
+    font: 1.4rem $primary-font;
+    color: $silver-color;
+  }
+}
+
+.phone-footer {
+  max-width: 293px;
+  font: 1.4rem $primary-font;
+  margin: 20px auto 0;
+
+  &__item:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &__link {
+    color: $silver-color;
+  }
+
+  &__desc {
+    color: $dusty-gray-color;
+    margin-left: 5px;
+  }
+
+  @media (min-width: $screen-sm) {
+    margin: auto;
+  }
+}
+
+.form-search-footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto 0;
+
+  &__label {
+    color: $silver-color;
+    font: 1rem/20px $primary-font;
+  }
+
+  &__input {
+    width: 140px;
+    border: none;
+    line-height: 21px;
+    border-radius: 3px;
+    margin-right: 8px;
+    background: #8a8a8a;
+    margin-left: 5px;
+    padding: 0 5px;
+
+    @media (min-width: $screen-sm) {
+      width: 220px;
+    }
+  }
+
+  &__button {
+    border: none;
+    border-radius: 3px;
+    font: 1rem/21px $primary-font;
+    background: #5c5c5c;
+    text-transform: uppercase;
+    color: $white-color;
+
+  }
+}
+
+.footer-bottom {
+  margin-top: 35px;
+
+  .container-main {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__info {
+    max-width: 610px;
+    font: 1.2rem/16px $primary-font;
+    color: #929292;
+  }
+
+  &__order {
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    @media (min-width: $screen-lg) {
+      margin: 0;
+    }
+  }
+
+  &__dev {
+    margin-right: 8px;
+    font: 1.2rem/16px $primary-font;
+    color: #929292;
+  }
+
+}

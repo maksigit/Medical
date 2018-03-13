@@ -8,7 +8,7 @@
 
 $susy: (
         columns: 12,
-        gutters: 1/4,
+        gutters: 0,
         math: fluid,
         output: float,
         gutter-position: after,
@@ -128,12 +128,49 @@ $susy: (
   display: none;
 }
 
+
 .offer {
   text-align: center;
   background: $concrete;
+  padding: 50px 0;
 
-  &__wrapper {
-    padding: 0 25px;
+  &__masthead {
+    font: 3.6rem/44px $primary-font;
+    color: $black-color;
+  }
+
+  &__hits {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px auto 0;
+  }
+
+  &__link {
+    font: 1.4rem/22px $primary-font;
+    color: $lochmara-color;
+    text-decoration: underline;
+  }
+}
+
+.offer-wrap {
+  clear: both;
+  overflow: hidden;
+  margin-top: 25px;
+
+  &__item {
+    @include span(12);
+    height: 585px;
+    position: relative;
+    background: $white-color;
+
+    @media (min-width: $screen-md) {
+      @include span(6);
+    }
+
+    @media (min-width: $screen-lg) {
+      @include span(3);
+    }
   }
 
   &__img {
@@ -147,11 +184,6 @@ $susy: (
     img {
       max-width: 100%;
     }
-  }
-
-  &__masthead {
-    font: 3.6rem/44px $primary-font;
-    color: $black-color;
   }
 
   &__category {
@@ -171,11 +203,10 @@ $susy: (
     margin-top: 22px;
   }
 
-  &__oldprice {
-    font: 1.2rem/20px $primary-font;
-    color: #e98522;
-    text-decoration: line-through;
-    margin-left: 10px;
+  &__wrap-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
   }
 
   &__price {
@@ -183,17 +214,11 @@ $susy: (
     color: $black-color;
   }
 
-  &__hits {
-    max-width: 400px;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-  }
-
-  &__link {
-    font: 1.4rem/22px $primary-font;
-    color: $lochmara-color;
-    text-decoration: underline;
+  &__oldprice {
+    font: 1.2rem/20px $primary-font;
+    color: #e98522;
+    text-decoration: line-through;
+    margin-left: 10px;
   }
 
   &__btn {
@@ -207,18 +232,4 @@ $susy: (
     margin-top: 35px;
   }
 
-  &__hits__item {
-    @include assortment__item(12);
-    background: $white-color;
-    box-sizing: border-box;
-    height: 583px;
-    padding: 10px;
-    position: relative;
-  }
-
-  &__wrap-bottom {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
 }

@@ -30,7 +30,7 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('build/styles'));
 });
 gulp.task('libscss', function () {
-    return gulp.src(['node_modules/swiper/dist/css/swiper.min.css', 'src/styles/normalize.css'])
+    return gulp.src(['node_modules/swiper/dist/css/swiper.min.css', 'node_modules/normalize.css/normalize.css'])
         .pipe(concat('libs.min.css'))
         .pipe(gulp.dest('build/styles'));
 });
@@ -67,7 +67,7 @@ gulp.task('serve', function (){
 
 gulp.task('watch', function (){
     gulp.watch('src/styles/**/*.*', gulp.series('styles'));
-    gulp.watch('src/pug/*.pug', gulp.series('pug'));
+    gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
     gulp.watch('src/scripts/**/*.*', gulp.series('scripts'));
     gulp.watch('src/images/**', gulp.series('img'));
 });

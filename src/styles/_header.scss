@@ -121,17 +121,17 @@ html {
     }
   }
 
-  &__button {
-    position: absolute;
-    left: 10px;
-    background: none;
-    padding: 0;
-    border: none;
-  }
-
   @media (min-width: 544px) {
     margin-top: 0;
   }
+}
+
+.form-search__button {
+  position: absolute;
+  left: 10px;
+  background: none;
+  padding: 0;
+  border: none;
 }
 
 .wrap-signin-basket {
