@@ -1,0 +1,37 @@
+section.catalog-main
+  .container-main
+    +b.UL.breadcrumbs
+      +e.LI.item
+        +e.A.link(href ='#') Главная
+      +e.LI.item
+        +e.A.link(href ='#') Каталог
+    h1.catalog-main__title Каталог
+    .wrap-catalog
+      +b.ASIDE.catalog-aside
+        +e.UL.list
+          for item in CatalogList
+            each element in item.itemCatalog
+              +e.LI.item
+                +e.A.link(href ='#')= element
+                   span >
+                +b.UL.catalog-aside-hide.js-catalog-aside-hide
+                  each elementhide in item.itemCatalogHide
+                    +e.LI.item
+                      +e.A.link(href ='#')= elementhide
+                        +e.SPAN.count (1)
+      //.wrap-tools Показано товаров:  2 010
+      //  .show
+      //  .sort
+      +b.wrap-catalog-main
+        for name in hits
+          +e.item
+            +e.wrap
+              +e.img
+                img(src= name.img, alt='')
+              +e.A.category(href="#")= name.category
+              +e.A.title(href="#")= name.title
+              +e.desc= name.desc
+            +e.wrap-bottom
+              +e.price= name.price
+                +e.SPAN.oldprice= name.oldPrice
+              +e.A.btn(href="#") купить »

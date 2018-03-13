@@ -3,17 +3,6 @@
     .container
       .masthead ассортимент нашей продукции
       .content.assortment
-        mixin assortment(item)
-          .assortment__item
-            +b.catalog
-              +e.img
-                img(src= item.assortImg, alt='')
-              +e.list__wrap
-                +e.A.title(href='')= item.assortTitle
-                +e.UL
-                  each link in item.item1
-                    +e.LI.item
-                      +e.A.link(href='#')= link
         for item in assortmentItem
           +assortment(item)
     .container
@@ -21,5 +10,5 @@
         for item in assortmentItem
           +assortment(item)
     +b.btn
-      +e.A.catalog(href='') перейти в полный каталог продукции
+      +e.A.catalog(href='catalog.html') перейти в полный каталог продукции
       +e.desc Еще 9 категорий медицинских товаров.

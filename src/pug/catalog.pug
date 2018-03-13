@@ -1,0 +1,18 @@
+include ../bemto-master/bemto
+include var/_var
+
+doctype html
+html(lang='en')
+  include blocks/_head
+  body
+    include blocks/_svg
+    include blocks/_mixin
+    include blocks/_header
+  main
+    include blocks/_catalog-main
+  footer
+    include blocks/_footer
+
+  script(src='scripts/libs.min.js')
+  script(src='scripts/mobile-menu.min.js')
+  script(src='scripts/swiper-slider.min.js')

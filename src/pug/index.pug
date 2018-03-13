@@ -1,12 +1,14 @@
 include ../bemto-master/bemto
-include _var
+include var/_var
 
 doctype html
 html(lang='en')
   include blocks/_head
   body
     include blocks/_svg
+    include blocks/_mixin
     include blocks/_header
+    include blocks/_banner
   main
     include blocks/_primary-main
     include blocks/_offer

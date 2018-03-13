@@ -1,0 +1,11 @@
+mixin assortment(item)
+  .assortment__item
+    +b.catalog
+      +e.img
+        img(src= item.assortImg, alt='')
+      +e.list__wrap
+        +e.A.title(href='')= item.assortTitle
+        +e.UL
+          each link in item.item1
+            +e.LI.item
+              +e.A.link(href='#')= link

@@ -53,7 +53,7 @@ gulp.task('img', function () {
         .pipe(gulp.dest('build/images/'));
 });
 gulp.task('pug', function () {
-    return gulp.src('src/pug/index.pug')
+    return gulp.src('src/pug/*.pug')
         .pipe(pug())
         .pipe(gulp.dest('build/'));
 });
