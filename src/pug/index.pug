@@ -3,7 +3,7 @@ include var/_var
 
 doctype html
 html(lang='en')
-  include blocks/_head
+  include meta/_head
   body
     include blocks/_svg
     include blocks/_mixin
@@ -17,6 +17,4 @@ html(lang='en')
     include blocks/_footer
 
 
-script(src='scripts/libs.min.js')
-script(src='scripts/mobile-menu.min.js')
-script(src='scripts/swiper-slider.min.js')
+include meta/_scripts

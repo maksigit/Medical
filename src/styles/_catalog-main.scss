@@ -125,10 +125,18 @@
   justify-content: space-around;
 
   &__item {
-    max-width: 300px;
+    @include span(12);
     position: relative;
     text-align: center;
     height: 580px;
+    box-shadow: 0 0 1px $silver-color;
+
+    @media (min-width: $screen-sm) {
+      @include span(6);
+    }
+    @media (min-width: $screen-xlg) {
+      @include span(4);
+    }
   }
 
   &__img {
