@@ -26,3 +26,4 @@ $listAdd.find("li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4
 $(".js-hide-catalog").on('click', function () {
     $(this).siblings(".test-js").slideToggle();
 });
+

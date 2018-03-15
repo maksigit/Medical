@@ -1,0 +1,50 @@
+.container-main
+  section.card-main
+    +b.UL.breadcrumbs
+      +e.LI.item
+        +e.A.link(href ='#') Главная
+      +e.LI.item
+        +e.A.link(href ='#') Каталог
+      +e.LI.item
+        +e.A.link(href ='#') Товары для дома
+      +e.LI.item
+        +e.A.link(href ='#') Тонометры
+      +e.LI.item
+        +e.A.link(href ='#') Тонометры автоматические
+    a.turn-back(href ='#') назад
+    +b.card
+      +e.img
+        +e.A(href ='#')
+          +e.img-top
+            img(src= hits[0].img , alt='')
+            +e.stock(class =hits.colorStock) #{hits[0].stock}
+        +b.thumbnails
+          +e.A.wrap(href ='#')
+            +e.img.IMG(src= hits[0].thumbnails1 , alt='')
+          +e.A.wrap(href ='#')
+            +e.img.IMG(src= hits[0].thumbnails2 , alt='')
+      +e.wrap-info
+        +e.wrap-top
+          +e.title #{hits[0].title}
+          +e.A.category(href="#") #{hits[0].category}
+          +e.desc #{hits[0].desc}
+        +e.wrap-bottom
+          +e.price #{hits[0].price}
+            +e.SPAN.oldprice #{hits[0].oldPrice}
+          +e.A.btn(href="#") купить »
+    +b.wrap-product
+      +e.title Описание товара
+      +e.P.desc Микроскоп предназначен для наблюдения и морфологических исследований препаратов в проходящем свете по методу светлого поля. МИКРОМЕД Р-1 может быть использован при учебных и лабораторных работах в различных областях медицины для решения широкого круга задач, в ветеринарии. На микроскопе можно изучать окрашенные и неокрашенные биологические объекты в виде мазков и срезов.
+      +e.P.desc МИКРОМЕД Р-1 обеспечивает возможность вывода изображения в режиме реального времени на экран ПК с помощью видеоокуляра (в комплект не входит) для количественного анализа структур исследуемых объектов.
+      +e.P.desc Сочетая в себе ахроматическую оптику и низкую цену, микроскоп МИКРОМЕД Р-1 незаменим как для целей обучения в высших медицинских и биологических учреждениях, так и для несложной рутинной работы в лаборатории. Широко используется в ветеринарии.
+      +e.P.desc Микроскоп рассчитан на длину тубуса 160 мм, объективы стандарта RMS, парфокальная высота объективов 33 мм.
+      +e.technical
+        +e.title Технические характеристики
+        +e.wrap-list
+          +e.UL.list
+            for name in tech1
+              +e.LI.item= name
+          +e.UL.list
+            for name in tech2
+              +e.LI.item= name
+
