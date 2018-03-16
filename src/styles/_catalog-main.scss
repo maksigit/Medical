@@ -120,9 +120,7 @@
 }
 
 .wrap-catalog-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  @include con-grid(3, 5px, 0px, 0px, 5px);
 }
 
 .jaffa {

@@ -1,19 +1,46 @@
-@import "../../node_modules/susy/sass/susy";
+@mixin con-grid ($size, $mr-h, $mr-s, $pd-h, $pd-s) {
+  .l-wrap {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-$susy: (
-        columns: 12,
-        gutters: 0,
-        math: fluid,
-        output: float,
-        gutter-position: after,
-        container: 100%,
-        debag: (
-                image: show,
-                color: rgba(#66f, .5),
-                output: background,
-                toggle: top right,
-        ),
-);
+  .wrap-grid-item {
+    padding: $pd-h $pd-s;
+    margin: $mr-h auto $mr-s;
+    width: 100%;
+    box-sizing: border-box;
+
+
+    @media (min-width: $screen-sm) {
+      width: 100%/($size/2);
+    }
+    @media (min-width: $screen-lg) {
+      width: 100%/($size/2);
+    }
+    @media (min-width: $screen-xlg) {
+      width: 100%/$size;
+      margin: $mr-h, $mr-s;
+    }
+  }
+
+  .grid-item {
+    box-sizing: border-box;
+  }
+}
+
+.test-grid {
+  @include con-grid(4, 5px, 0px, 0px, 5px)
+}
+
+
+
+
+
 
 .container-main {
   max-width: 1293px;

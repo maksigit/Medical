@@ -4,39 +4,17 @@
   }
 }
 
-.container {
-  @include container();
-
-  &:nth-child(2) {
-    border-top: 1px solid #e3e3e3;
-  }
+.assortment {
+  margin-top: 50px;
+  @include con-grid(4, 0px, 45px, 0px, 5px);
 }
+
 
 .masthead {
   text-align: center;
   font: 1.4rem $primary-font;
   text-transform: uppercase;
   color: $emperor-color;
-}
-
-@mixin assortment__item($col) {
-  @include span($col);
-  margin: 50px 0 20px 0;
-
-  @media (min-width: $screen-sm) {
-    @include span($col/2);
-    margin: 50px 0 20px 0;
-  }
-
-  @media (min-width: $screen-lg) {
-    @include span($col/4);
-    margin: 50px 0 20px 0;
-  }
-
-}
-
-.assortment__item {
-  @include assortment__item(12);
 }
 
 .catalog {
@@ -80,7 +58,6 @@
       text-decoration: underline;
     }
   }
-
 }
 
 .catalog__list__wrap {
@@ -123,7 +100,7 @@
     max-width: 400px;
     display: flex;
     justify-content: space-between;
-    margin: 25px auto 0;
+    margin: 25px auto 25px;
   }
 
   &__link {
@@ -134,27 +111,13 @@
 }
 
 .offer-wrap {
-  clear: both;
-  overflow: hidden;
-  margin-top: 25px;
+ @include con-grid(4, 0px, 5px, 0px, 5px);
 }
 
 .item {
-  margin-top: 10px;
-
-
-  @include span(12);
   position: relative;
-  padding: 0 5px;
   box-sizing: border-box;
-
-  @media (min-width: $screen-md) {
-    @include span(6);
-  }
-
-  @media (min-width: $screen-lg) {
-    @include span(3);
-  }
+  box-shadow: 0 0 3px $silver-color;
 
   &__wrap {
     background: $white-color;
@@ -200,8 +163,10 @@
   &__wrap-bottom {
     position: absolute;
     bottom: 20px;
-    width: 100%;
     text-align: center;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &__price {
@@ -213,7 +178,7 @@
     font: 1.2rem/20px $primary-font;
     color: #e98522;
     text-decoration: line-through;
-    margin-left: 10px;
+    padding-left: 8px;
   }
 
   &__btn {

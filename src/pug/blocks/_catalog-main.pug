@@ -20,5 +20,8 @@
                       +e.A.link(href ='#')= elementhide
                         +e.SPAN.count (1)
       +b.wrap-catalog-main
-        for name in hits
-          +item(name)
+        .l-wrap
+          for name in hits
+            .wrap-grid-item
+              .grid-item
+                +item(name)
