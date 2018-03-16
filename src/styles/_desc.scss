@@ -5,20 +5,4 @@
     padding: 38px 15px 48px;
     text-align: center;
   }
-
-  &__title {
-    margin: 0;
-    font-size: 1.8rem;
-    font-family: $primary-font;
-    line-height: 44px;
-    color: $black-color;
-
-    @media (min-width: $screen-sm) {
-      font: 3.6rem/44px $primary-font;
-    }
-  }
-  &__info {
-    font: 1.6rem/24px $primary-font;
-    color: $black-color;
-  }
 }

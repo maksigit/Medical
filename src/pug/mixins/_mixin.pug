@@ -1,0 +1,40 @@
+mixin assortment(item)
+  .assortment__item
+    +b.catalog
+      +e.img
+        img(src= item.assortImg, alt='')
+      +e.list__wrap
+        +e.A.title(href='')= item.assortTitle
+        +e.UL
+          each link in item.item1
+            +e.LI.item
+              +e.A.link(href='#')= link
+
+mixin item(item)
+  +b.item
+    +e.wrap
+      +e.img
+        img(src= item.img, alt='')
+      +e.A.category(href="#")= item.category
+      +e.A.title(href="card.html")= item.title
+      +e.desc= item.desc
+      +e.wrap-bottom
+        +e.price= item.price
+        +e.SPAN.oldprice= item.oldPrice
+        +e.A.btn(href="#") купить »
+
+mixin basePage(page)
+  doctype html
+  html(lang='en')
+    include ../meta/_head
+    body
+      include ../../svg/_sprite.svg
+      include ../blocks/_header
+      main
+        if block
+          block
+      footer
+        include ../blocks/_footer
+
+
+  include ../meta/_scripts

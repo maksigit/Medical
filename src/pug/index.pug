@@ -1,20 +1,9 @@
 include ../bemto-master/bemto
 include var/_var
+include mixins/_mixin
 
-doctype html
-html(lang='en')
-  include meta/_head
-  body
-    include blocks/_svg
-    include blocks/_mixin
-    include blocks/_header
-    include blocks/_banner
-  main
-    include blocks/_primary-main
-    include blocks/_offer
-    include blocks/_desc
-  footer
-    include blocks/_footer
-
-
-include meta/_scripts
++basePage
+  include blocks/_banner
+  include blocks/_primary-main
+  include blocks/_offer
+  include blocks/_desc

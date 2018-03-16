@@ -1,6 +1,7 @@
+//////////////////// SWIPER ///////////////////
 $(document).ready(function () {
     //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
+    var mySwiper = new Swiper ('.js-swiper-container-main', {
         spaceBetween: 30,
         pagination: {
             el: '.swiper-pagination',
@@ -8,3 +9,5 @@ $(document).ready(function () {
         },
     });
 });
+
+//////////////////// END SWIPER ///////////////////

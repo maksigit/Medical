@@ -1,20 +1,10 @@
 +b.SECTION.offer
   .container-main
-    +e.masthead Интересные предложения:
+    +e.H2.masthead Интересные предложения:
     +e.UL.hits
       each element in ["Все новинки ", "Все хиты продаж", "Лучшая цена"]
         +e.LI.item
           +e.A.link(href="#")= element
     +b.offer-wrap
       for name in hits
-        +e.item
-          +e.wrap
-            +e.img
-              img(src= name.img, alt='')
-            +e.A.category(href="#")= name.category
-            +e.A.title(href="card.html")= name.title
-            +e.desc= name.desc
-          +e.wrap-bottom
-            +e.price= name.price
-            +e.SPAN.oldprice= name.oldPrice
-            +e.A.btn(href="#") купить »
+        +item(name)

@@ -12,6 +12,23 @@ const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const svgo = require('gulp-svgo');
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const removeFiles = require('gulp-remove-files');
+const ifElse = require('gulp-if-else');
+const fileExist = require('file-exists');
+const pathExist = require('path-exists');
+
+var paths   = {
+    swiperCss   : 'node_modules/swiper/dist/css/swiper.min.css',
+    normilize   : 'node_modules/normalize.css/normalize.css',
+    jquery      : 'node_modules/jquery/dist/jquery.min.js',
+    swiperJs    : 'node_modules/swiper/dist/js/swiper.min.js'
+
+};
+var condition = true;
 
 gulp.task('styles', function () {
     var proccesors = [
@@ -30,20 +47,18 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('build/styles'));
 });
 gulp.task('libscss', function () {
-    return gulp.src(['node_modules/swiper/dist/css/swiper.min.css', 'node_modules/normalize.css/normalize.css'])
+    return gulp.src([paths.swiperCss, paths.normilize])
         .pipe(concat('libs.min.css'))
         .pipe(gulp.dest('build/styles'));
 });
 gulp.task('scripts', function () {
     return gulp.src('src/scripts/*.js')
-        .pipe(rename({
-            suffix: '.min'
-        }))
+        .pipe(concat('jsini.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('build/scripts'));
 });
 gulp.task('libjs', function () {
-    return gulp.src(['node_modules/jquery/dist/jquery.min.js', 'node_modules/swiper/dist/js/swiper.min.js'])
+    return gulp.src([paths.jquery, paths.swiperJs])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('build/scripts'))
@@ -51,6 +66,36 @@ gulp.task('libjs', function () {
 gulp.task('img', function () {
     return gulp.src('src/images/*.*')
         .pipe(gulp.dest('build/images/'));
+});
+gulp.task('delSvg', function () {
+    return pathExist('src/svg/_sprite.svg').then(exists => {
+        if (exists) {
+            return gulp.src('src/svg/_sprite.svg').pipe(removeFiles());
+        }
+    });
+});
+
+gulp.task('svg', function () {
+    return gulp.src('src/svg/*.svg')
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../_sprite.svg"
+                }
+            }
+        }))
+        .pipe(cheerio({
+            run:           function($) {
+                $('svg').css('display', 'none');
+            },
+            parserOptions: {xmlMode: true}
+        }))
+        .pipe(gulp.dest('src/svg/'));
 });
 gulp.task('pug', function () {
     return gulp.src('src/pug/*.pug')
@@ -70,8 +115,9 @@ gulp.task('watch', function (){
     gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
     gulp.watch('src/scripts/**/*.*', gulp.series('scripts'));
     gulp.watch('src/images/**', gulp.series('img'));
+    gulp.watch('src/svg/**', gulp.series('svg'));
 });
 
-gulp.task('build', gulp.series('pug', 'libscss', 'styles', 'libjs', 'scripts', 'img', gulp.parallel('watch', 'serve')));
+gulp.task('build', gulp.series('delSvg', 'svg','pug', 'libscss', 'styles', 'libjs', 'scripts', 'img', gulp.parallel('watch', 'serve')));
 
 

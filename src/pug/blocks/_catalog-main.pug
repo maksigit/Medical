@@ -1,11 +1,11 @@
-section.catalog-main
++b.SECTION.catalog-main
   .container-main
     +b.UL.breadcrumbs
       +e.LI.item
         +e.A.link(href ='#') Главная
       +e.LI.item
         +e.A.link(href ='#') Каталог
-    h1.catalog-main__title Каталог
+    +e.H1.title Каталог
     .wrap-catalog
       +b.ASIDE.catalog-aside
         +e.UL.list
@@ -21,15 +21,4 @@ section.catalog-main
                         +e.SPAN.count (1)
       +b.wrap-catalog-main
         for name in hits
-          +e.item
-            +e.wrap
-              +e.img
-                img(src= name.img, alt='')
-                +e.stock(class =name.colorStock)= name.stock
-              +e.A.category(href="#")= name.category
-              +e.A.title(href="#")= name.title
-              +e.desc= name.desc
-            +e.wrap-bottom
-              +e.price= name.price
-                +e.SPAN.oldprice= name.oldPrice
-              +e.A.btn(href="#") купить »
+          +item(name)

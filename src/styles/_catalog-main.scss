@@ -2,6 +2,11 @@
   .container-main {
     padding: 35px 15px;
   }
+
+  &__title {
+    font: 3.6rem/24px $primary-font;
+    color: $black-color;
+  }
 }
 
 .breadcrumbs {
@@ -18,11 +23,6 @@
     font: 1.2rem/24px $primary-font;
     color: $black-color;
   }
-}
-
-.catalog-main__title {
-  font: 3.6rem/24px $primary-font;
-  color: $black-color;
 }
 
 .wrap-catalog {
@@ -123,92 +123,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
-  &__item {
-    @include span(12);
-    position: relative;
-    text-align: center;
-    height: 580px;
-    box-shadow: 0 0 1px $silver-color;
-
-    @media (min-width: $screen-sm) {
-      @include span(6);
-    }
-    @media (min-width: $screen-xlg) {
-      @include span(4);
-    }
-  }
-
-  &__img {
-    max-width: 276px;
-    height: 211px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    position: relative;
-
-    img {
-      max-width: 100%;
-    }
-  }
-
-  &__stock {
-    font: 0.9rem/20px $primary-font;
-    text-transform: uppercase;
-    padding: 0 8px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: #f49639;
-    color: $white-color;
-  }
-
-  &__category {
-    font: 1.2rem/20px $primary-font;
-    color: $dusty-gray-color;
-  }
-
-  &__title {
-    font: bold 1.8rem/24px $primary-font;
-    color: $lochmara-color;
-    margin-top: 17px;
-  }
-
-  &__desc {
-    font: 1.6rem/22px $primary-font;
-    color: $black-color;
-    margin-top: 22px;
-  }
-
-  &__wrap-bottom {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-  }
-
-  &__price {
-    font: 1.8rem/20px $primary-font;
-    color: $black-color;
-  }
-
-  &__oldprice {
-    font: 1.2rem/20px $primary-font;
-    color: #e98522;
-    text-decoration: line-through;
-    margin-left: 10px;
-  }
-
-  &__btn {
-    font: 1.2rem/20px $primary-font;
-    color: $white-color;
-    background: $carnation-color;
-    text-transform: uppercase;
-    width: 100px;
-    padding: 14px 0;
-    border-radius: 3px;
-    margin-top: 35px;
-  }
 }
 
 .jaffa {
