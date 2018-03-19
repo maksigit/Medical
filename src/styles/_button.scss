@@ -1,0 +1,25 @@
+.btn-primary {
+  font: bold 1.2rem $primary-font;
+  background: $carnation-color;
+  border-radius: 3px;
+  padding: 12px 19px;
+  color: $white-color;
+  text-transform: uppercase;
+}
+
+.btn-primary__loc {
+  margin-top: 35px;
+}
+
+.btn-secondary {
+  font: bold 1.2rem $primary-font;
+  background: $lochmara-color;
+  padding: 25px 60px;
+  color: $white-color;
+  text-transform: uppercase;
+
+  @media(min-width: $screen-sm) {
+    font: bold 1.6rem $primary-font;
+  }
+}
+

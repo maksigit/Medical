@@ -1,64 +1,8 @@
-@mixin con-grid ($size, $mr-h, $mr-s, $pd-h, $pd-s) {
-  .l-wrap {
-    max-width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .wrap-grid-item {
-    padding: $pd-h $pd-s;
-    margin: $mr-h auto $mr-s;
-    width: 100%;
-    box-sizing: border-box;
-
-
-    @media (min-width: $screen-sm) {
-      width: 100%/($size/2);
-    }
-    @media (min-width: $screen-lg) {
-      width: 100%/($size/2);
-    }
-    @media (min-width: $screen-xlg) {
-      width: 100%/$size;
-      margin: $mr-h, $mr-s;
-    }
-  }
-
-  .grid-item {
-    box-sizing: border-box;
-  }
-}
-
-.test-grid {
-  @include con-grid(4, 5px, 0px, 0px, 5px)
-}
-
-
-
-
-
-
 .container-main {
   max-width: 1293px;
   box-sizing: border-box;
   margin: auto;
   padding: 0 15px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  display: inline-block;
-  transition: .4s;
 }
 
 

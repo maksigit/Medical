@@ -14,13 +14,14 @@ mixin item(item)
     +e.wrap
       +e.img
         img(src= item.img, alt='')
+        +e.stock(class= item.colorStock)= item.stock
       +e.A.category(href="#")= item.category
       +e.A.title(href="card.html")= item.title
       +e.desc= item.desc
       +e.wrap-bottom
         +e.price= item.price
           +e.SPAN.oldprice= item.oldPrice
-        +e.A.btn(href="#") купить »
+        a.btn-primary.btn-primary__loc(href="#") купить »
 
 mixin basePage(page)
   doctype html

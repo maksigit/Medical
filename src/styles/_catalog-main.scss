@@ -64,71 +64,60 @@
 .catalog-aside {
   background: #e8f5f9;
   display: none;
+  &__list {
+    width: 290px;
+  }
+
+  &__item:first-child {
+    text-transform: uppercase;
+
+    a {
+      color: $white-color;
+      background: $lochmara-color;
+
+      &:after, span {
+        display: none;
+      }
+
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover {
+      .catalog-aside-hide {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    font: 1.5rem/22px $primary-font;
+    color: $emperor-color;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      color: $lochmara-color;
+    }
+
+    &:hover {
+      background: $carnation-color;
+      color: $white-color;
+
+      span {
+        color: $white-color;
+      }
+    }
+  }
 
   @media (min-width: $screen-md) {
     display: block;
-
-    &__list {
-      width: 290px;
-    }
-
-    &__item:first-child {
-      text-transform: uppercase;
-
-      a {
-        color: $white-color;
-        background: $lochmara-color;
-
-        &:after, span {
-          display: none;
-        }
-
-      }
-    }
-
-    &__item {
-      position: relative;
-
-      &:hover {
-        .catalog-aside-hide {
-          display: block;
-        }
-      }
-    }
-
-    &__link {
-      font: 1.5rem/22px $primary-font;
-      color: $emperor-color;
-      padding: 20px 25px;
-      display: flex;
-      justify-content: space-between;
-
-      span {
-        color: $lochmara-color;
-      }
-
-      &:hover {
-        background: $carnation-color;
-        color: $white-color;
-
-        span {
-          color: $white-color;
-        }
-      }
-    }
   }
 }
 
 .wrap-catalog-main {
   @include con-grid(3, 5px, 0px, 0px, 5px);
-}
-
-.jaffa {
-  background: $jaffa-stock-color;
-}
-.sushi {
-  background: $sushi-stock-color;
-}
-.medium-purple {
-  background: $medium-purple-stock-color;
 }
