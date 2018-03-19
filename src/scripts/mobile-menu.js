@@ -33,7 +33,7 @@ $(".js-hide-catalog").on('click', function () {
 
 /////////////// IMG to enlarge ////////////////
 
-$('.thumbnails__img').on('click', function (e) {
+$('.js-thumbnails-img').on('click', function (e) {
     console.log('ggg');
     e.preventDefault();
     var imgThumb = $(this).attr('src');
