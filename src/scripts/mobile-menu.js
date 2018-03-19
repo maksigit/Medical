@@ -30,3 +30,17 @@ $(".js-hide-catalog").on('click', function () {
 });
 
 /////////////// END MOBILE MENU ////////////////
+
+/////////////// IMG to enlarge ////////////////
+
+$('.thumbnails__img').on('click', function (e) {
+    console.log('ggg');
+    e.preventDefault();
+    var imgThumb = $(this).attr('src');
+    console.log(imgThumb);
+    $('.card__img').find('.card__img-top > img').attr('src', imgThumb);
+});
+
+
+/////////////// IMG to enlarge ////////////////
+

@@ -1,3 +1,7 @@
+.card-main {
+  padding-bottom: 60px;
+}
+
 .turn-back {
   width: 290px;
   padding: 20px 25px;
@@ -116,7 +120,7 @@
 
   @media (min-width: $screen-lg) {
     flex-direction: row;
-    justify-content: space-between;
+    //justify-content: space-between;
     margin-top: 20px;
   }
 }
@@ -146,8 +150,7 @@
   margin-top: 20px;
 
   &__title {
-    font: 3.0rem/44px $primary-font;
-    color: $black-color;
+    margin: 35px 0 22px;
   }
 
   &__desc {
@@ -155,29 +158,105 @@
     color: $black-color;
   }
 
-  &__wrap-list {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1070px;
-  }
-
-  &__list {
-    width: 40%;
-
-    &:last-child {
-      width: 60%;
-    }
-  }
-
-
   &__item {
-    font: 1.4rem/50px $primary-font;
-    color: $black-color;
-    border: 1px solid $dusty-gray-color;
     padding-left: 20px;
 
     &:nth-child(2n) {
       background: $silver-color;
     }
+  }
+}
+
+.technical {
+  &__title {
+    margin: 35px 0 22px;
+  }
+}
+
+.table-product {
+  width: 100%;
+  border-collapse:collapse;
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+
+  &__row{
+    border-top: 1px solid #e3e3e3;
+
+    &:nth-child(2n) {
+      background: #f1f1f1;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #e3e3e3;
+    }
+  }
+
+  &__col {
+    font: 1.4rem/25px "Open Sans",sans-serif;
+    color: $black-color;
+    padding-left: 20px;
+
+    @media(min-width: $screen-md) {
+      font: 1.4rem/50px $primary-font;
+    }
+  }
+}
+
+.advantages {
+  &__title {
+    margin: 35px 0 22px;
+  }
+
+  &__item {
+    font: 1.6rem/20px $primary-font;
+    padding-left: 15px;
+    margin-top: 15px;
+    color: $black-color;
+
+    &:before {
+      content: ">";
+      padding-right: 15px;
+      font-weight: bold;
+      color: $lochmara-color;
+    }
+  }
+}
+
+.completeness {
+  &__title {
+    margin: 35px 0 22px;
+  }
+
+  &__list {
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding-left: 15px;
+  }
+
+  &__item {
+    color: $lochmara-color;
+    font: 1.6rem/20px $primary-font;
+    margin-top: 15px;
+  }
+
+  &__inner {
+    padding-left: 15px;
+    color: $black-color;
+  }
+}
+
+.additionally {
+  &__title {
+    margin: 35px 0 22px;
+  }
+
+  &__download {
+    display: block;
+    //font: bold 1.6rem/24px $lochmara-color;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 24px;
+    color: $lochmara-color;
+    text-decoration: underline;
   }
 }

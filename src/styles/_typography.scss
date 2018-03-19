@@ -12,3 +12,9 @@ p {
   font: 1.6rem/24px "Open Sans",sans-serif;
   color: #010101;
 }
+
+h3 {
+  font: 3.0rem/44px $primary-font;
+  color: $black-color;
+  margin: 0;
+}
