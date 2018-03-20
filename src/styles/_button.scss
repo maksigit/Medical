@@ -1,25 +1,38 @@
-.btn-primary {
-  font: bold 1.2rem $primary-font;
-  background: $carnation-color;
-  border-radius: 3px;
-  padding: 12px 19px;
-  color: $white-color;
+.btn {
   text-transform: uppercase;
-}
-
-.btn-primary__loc {
-  margin-top: 35px;
-}
-
-.btn-secondary {
-  font: bold 1.2rem $primary-font;
-  background: $lochmara-color;
-  padding: 25px 60px;
   color: $white-color;
-  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
 
-  @media(min-width: $screen-sm) {
-    font: bold 1.6rem $primary-font;
+  &:hover {
+    opacity: .5;
+  }
+
+  &_size-small {
+    font: bold 1.2rem/35px $primary-font;
+    border-radius: 3px;
+    padding: 0 19px;
+  }
+
+  &_size-large {
+    font: bold 1.2rem/40px $primary-font;
+    padding: 0 60px;
+
+    @media (min-width: $screen-sm) {
+      font: bold 1.6rem/70px $primary-font;
+    }
+  }
+
+  &_red {
+    background: $carnation-color;
+  }
+
+  &_blue {
+    background: $lochmara-color;
+  }
+
+  &_loc {
+    margin-top: 35px;
   }
 }
-

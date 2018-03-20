@@ -10,37 +10,34 @@ $('.js-menu-header-close').on('click', function () {
     $('.js-menu-icon').show();
 });
 
-var $matched = $('.catalog__list__wrap');
+/////////////// END MOBILE MENU ////////////////
+
+/////////////// LIST HIDE ////////////////
+
+var $matched = $('.js-list-wrap');
 $matched.find("ul")
     .addClass("catalog__list");
 
 var $listAdd = $(".catalog__list");
 $listAdd.find("li")
     .addClass("js-catalog__item");
-$listAdd.find("li:nth-child(6)")
-    .addClass("js-hide-catalog");
-$listAdd.find(".js-hide-catalog > a")
-    .removeAttr("href");
-
 $listAdd.find("li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4), li:nth-child(5), li:nth-child(6)").removeClass("js-catalog__item");
 
 
-$(".js-hide-catalog").on('click', function () {
-    $(this).siblings(".js-catalog__item").slideToggle();
+$(".js-more").on('click', function () {
+    var thisCat = $(this).siblings(".catalog__list");
+    thisCat.find("li").slideToggle("js-catalog__item");
 });
 
-/////////////// END MOBILE MENU ////////////////
+/////////////// END LIST HIDE ////////////////
 
 /////////////// IMG to enlarge ////////////////
 
 $('.js-thumbnails-img').on('click', function (e) {
-    console.log('ggg');
     e.preventDefault();
     var imgThumb = $(this).attr('src');
-    console.log(imgThumb);
     $('.card__img').find('.card__img-top > img').attr('src', imgThumb);
 });
-
 
 /////////////// IMG to enlarge ////////////////
 

@@ -1,27 +1,28 @@
-.main-footer
-  .footer-top
-    .container-main
-      a.logo(href='')
-        img(src='images/logo-f.png', alt='')
-      +b.UL.address-footer
-        for name in address
-          +e.LI.item
-            +e.A.link(href='')=name.location
-          +e.LI.item
-            +e.A.link(href='')=name.timeWorkFoot
-          +e.LI.item
-            +e.A.link(href='')=name.output
-      +b.UL.phone-footer
-        for name in phone
-          +e.LI.item
-            +e.A.link(href= name.phoneAttr)= name.phone
-      +b.FORM.form-search-footer(action='', method='post')
-        +e.LABEL.label Поиск по сайту
-          +e.INPUT.input(type='text')
-        +e.BUTTON.button(type='submit') Найти
-  +b.footer-bottom
-    .container-main
-      +e.info ОБРАЩАЕМ ВАШЕ ВНИМАНИЕ, что данный интернет-сайт и материалы, размещенные на нем, носят исключительно информационный характер и ни при каких условиях не являются публичной офертой, определяемой положениями статьи 437 Гражданского кодекса РФ.
-      +e.order
-        +e.SPAN.dev Равзработка сайта
-        +e.IMG.bee(src='images/bee.png')
+footer
+  .main-footer
+    .footer-top
+      .container-main
+        a.logo(href='')
+          img(src='images/logo-f.png', alt='')
+        +b.UL.address-footer
+          for name in address
+            +e.LI.item
+              +e.A.link(href='')=name.location
+            +e.LI.item
+              +e.A.link(href='')=name.timeWorkFoot
+            +e.LI.item
+              +e.A.link(href='')=name.output
+        +b.UL.phone-footer
+          for name in phone
+            +e.LI.item
+              +e.A.link(href= name.phoneAttr)= name.phone
+        +b.FORM.form-search-footer(action='', method='post')
+          +e.LABEL.label Поиск по сайту
+            +e.INPUT.input(type='text')
+          +e.BUTTON.button(type='submit') Найти
+    +b.footer-bottom
+      .container-main
+        +e.info ОБРАЩАЕМ ВАШЕ ВНИМАНИЕ, что данный интернет-сайт и материалы, размещенные на нем, носят исключительно информационный характер и ни при каких условиях не являются публичной офертой, определяемой положениями статьи 437 Гражданского кодекса РФ.
+        +e.order
+          +e.SPAN.dev Равзработка сайта
+          +e.IMG.bee(src='images/bee.png')

@@ -21,13 +21,15 @@ const ifElse = require('gulp-if-else');
 const fileExist = require('file-exists');
 const pathExist = require('path-exists');
 
-var paths   = {
-    swiperCss   : 'node_modules/swiper/dist/css/swiper.min.css',
-    normilize   : 'node_modules/normalize.css/normalize.css',
-    jquery      : 'node_modules/jquery/dist/jquery.min.js',
-    swiperJs    : 'node_modules/swiper/dist/js/swiper.min.js'
+var pathsCss   = [
+    'node_modules/swiper/dist/css/swiper.min.css',
+    'node_modules/normalize.css/normalize.css'
+];
 
-};
+var pathsJs   = [
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/swiper/dist/js/swiper.min.js'
+];
 var condition = true;
 
 gulp.task('styles', function () {
@@ -47,7 +49,7 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('build/styles'));
 });
 gulp.task('libscss', function () {
-    return gulp.src([paths.swiperCss, paths.normilize])
+    return gulp.src(pathsCss)
         .pipe(concat('libs.min.css'))
         .pipe(gulp.dest('build/styles'));
 });
@@ -58,7 +60,7 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('build/scripts'));
 });
 gulp.task('libjs', function () {
-    return gulp.src([paths.jquery, paths.swiperJs])
+    return gulp.src(pathsJs)
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('build/scripts'))
@@ -85,7 +87,7 @@ gulp.task('svg', function () {
         .pipe(svgSprite({
             mode: {
                 symbol: {
-                    sprite: "../_sprite.svg"
+                    sprite: "../../images/_sprite.svg"
                 }
             }
         }))
@@ -114,8 +116,8 @@ gulp.task('watch', function (){
     gulp.watch('src/styles/**/*.*', gulp.series('styles'));
     gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
     gulp.watch('src/scripts/**/*.*', gulp.series('scripts'));
-    gulp.watch('src/images/**', gulp.series('img'));
-    gulp.watch('src/svg/**', gulp.series('svg'));
+    gulp.watch('src/images/**/*.*', gulp.series('img'));
+    gulp.watch('src/svg/**/*.*', gulp.series('svg'));
 });
 
 gulp.task('build', gulp.series('delSvg', 'svg','pug', 'libscss', 'styles', 'libjs', 'scripts', 'img', gulp.parallel('watch', 'serve')));

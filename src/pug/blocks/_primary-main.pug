@@ -1,12 +1,12 @@
 .primary-main
   .container-main
     .masthead ассортимент нашей продукции
-    .assortment
-      .l-wrap
-        for item in assortmentItem
-          .wrap-grid-item
-            .grid-item
+    +b.assortment
+      +e.container
+        .row
+          for item in assortmentItem
+            +e.item
               +assortment(item)
-    +b.btn
-      a.btn-secondary(href='catalog.html') перейти в полный каталог продукции
+    +b.wrap-btn
+      a.btn.btn_size-large.btn_blue(href='catalog.html') перейти в полный каталог продукции
       +e.desc Еще 9 категорий медицинских товаров.

@@ -6,9 +6,8 @@
         +e.LI.item
           +e.A.link(href="#")= element
     +b.offer-wrap
-      .test-grid
-        .l-wrap
+      +e.container
+        .row
           for name in hits
-            .wrap-grid-item
-              .grid-item
-                +item(name)
+            +e.item
+              +item(name)
