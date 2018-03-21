@@ -13,16 +13,13 @@ header.main-header
       form.form.form-search(action='', method='post')
         input.form-search__header(type='text', placeholder='Поиск по сайту')
         button.form-search__button(type='submit')
-          svg(width='15', height='15')
-            use(xlink:href='#search')
+          +svg-icon('search')
       .wrap-signin-basket
         +b.A.signin(href='#')
-          svg(width='10', height='11')
-            use(xlink:href='#login' fill='#49b2e2')
+          +svg-icon('login')
           +e.SPAN.cont Вход
         +b.A.basket(href='basket.html')
-          svg(width='22', height='22')
-            use(xlink:href='#basket')
+          +svg-icon('basket')
           +e.SPAN.cont Моя корзина
           +e.SPAN.counter 0
   .header-bottom

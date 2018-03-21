@@ -8,7 +8,8 @@ mixin assortment(item)
         each link in item.item1
           +e.LI.item
             +e.A.link(href='#')= link
-      +e.more.js-more Показать еще категории
+      - if (item.item1.length > 6)
+        +e.more.js-more Показать еще категории
 
 mixin item(item)
   +b.item
@@ -38,3 +39,7 @@ mixin basePage(page)
 
 
   include ../meta/_scripts
+
+mixin svg-icon(name)
+  svg(class="icon icon-" + name)
+    use(xlink:href="images/_sprite.svg#" + name)

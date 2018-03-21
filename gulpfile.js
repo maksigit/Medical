@@ -90,7 +90,8 @@ gulp.task('svg', function () {
                     sprite: "../../images/_sprite.svg",
                     render:  {
                         scss: {
-                            dest:     '../../styles/_svg-sprite.scss'
+                            dest:     '../../styles/_svg-sprite.scss',
+                            template: "src/styles/_sprite_template.scss"
                         }
                     },
                     example: true
