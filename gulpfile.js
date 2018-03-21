@@ -87,7 +87,13 @@ gulp.task('svg', function () {
         .pipe(svgSprite({
             mode: {
                 symbol: {
-                    sprite: "../../images/_sprite.svg"
+                    sprite: "../../images/_sprite.svg",
+                    render:  {
+                        scss: {
+                            dest:     '../../styles/_svg-sprite.scss'
+                        }
+                    },
+                    example: true
                 }
             }
         }))
