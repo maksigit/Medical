@@ -15,6 +15,11 @@
     padding: 0 19px;
   }
 
+  &_size-medium {
+    font: bold 1.6rem/70px $primary-font;
+    padding: 0 40px;
+  }
+
   &_size-large {
     font: bold 1.2rem/40px $primary-font;
     padding: 0 60px;
@@ -34,5 +39,8 @@
 
   &_loc {
     margin-top: 35px;
+  }
+  &_loc-large {
+    margin-top: 90px;
   }
 }
