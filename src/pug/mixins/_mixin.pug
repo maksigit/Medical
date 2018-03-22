@@ -8,8 +8,9 @@ mixin assortment(item)
         each link in item.item1
           +e.LI.item
             +e.A.link(href='#')= link
+      - var current = item.item1.length
       - if (item.item1.length > 6)
-        +e.more.js-more Показать еще категории
+        +e.more.js-more Показать еще #{current - 6} категорий
 
 mixin item(item)
   +b.item
