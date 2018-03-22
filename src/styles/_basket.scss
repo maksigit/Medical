@@ -1,5 +1,174 @@
-.basket-main {
+.basket-head {
   &__title {
     margin-top: 30px;
   }
 }
+
+.basket-buy {
+  margin-top: 20px;
+}
+
+.breadcrumbs {
+  margin-top: 30px;
+}
+
+.order-info {
+  border: 1px solid #a4d4ec;
+
+  &__header {
+    display: none;
+    justify-content: space-between;
+    background: $lochmara-color;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+  }
+
+  &__cell {
+    padding: 20px;
+    box-sizing: border-box;
+
+    &_title {
+      font: bold 1.2rem/20px $primary-font;
+      color: $white-color;
+      text-transform: uppercase;
+    }
+
+    &_number {
+      width: 10%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #a4d4ec;
+
+      @media (min-width: $screen-md) {
+        display: flex;
+      }
+    }
+
+    &_name {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: $screen-md) {
+        flex-direction: row;
+        width: 40%;
+      }
+    }
+
+    &_count {
+      width: 20%;
+    }
+
+    &_price {
+      width: 100%;
+
+      @media (min-width: $screen-md) {
+        width: 20%;
+      }
+    }
+
+    &_delete {
+      width: 10%;
+      padding: 20px 20px 20px 0;
+    }
+
+    &_desc {
+      font: bold 1.6rem/22px $primary-font;
+      color: $lochmara-color;
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-bottom: 1px solid #a4d4ec;
+
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+    }
+  }
+
+  &__img {
+    padding: 5px;
+    border: 1px solid #e3e3e3;
+    margin-right: 15px;
+    width: 80px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__price {
+    font: 1.8rem/20px $primary-font;
+    color: $black-color;
+  }
+
+  &__count {
+    font: 1.2rem/24px $primary-font;
+    color: $black-color;
+  }
+
+  &__delete {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 46px;
+    height: 46px;
+    border-radius: 3px;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @media (min-width: $screen-md) {
+      position: static;
+    }
+  }
+}
+
+.wrap-count {
+  display: flex;
+  justify-content: center;
+  width: 140px;
+  height: 39px;
+  font: bold 1.4rem/20px $primary-font;
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_mines {
+      width: 40%;
+      background: $lochmara-color;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      color: $white-color;
+      cursor: pointer;
+    }
+
+    &_number {
+      width: 60%;
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      color: $black-color;
+    }
+
+    &_plus {
+      width: 40%;
+      background: $lochmara-color;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      color: $white-color;
+      cursor: pointer;
+    }
+  }
+}
+

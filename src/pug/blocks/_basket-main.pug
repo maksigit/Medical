@@ -1,5 +1,5 @@
 .container-main
-  +b.SECTION.basket-main
+  +b.SECTION.basket-head
     +b.UL.breadcrumbs
       +e.LI.item
         +e.A.link(href ='#') Главная
@@ -8,3 +8,14 @@
       +e.LI.item
         +e.A.link(href ='#') Моя корзина
     +e.H2.title Моя корзина
+  section.basket-buy
+    +b.order-info
+      +e.header
+        +e.cell._title._number №
+        +e.cell._title._name наименование товара
+        +e.cell._title._count количество
+        +e.cell._title._price стоимость
+        +e.cell._title._delete удалить
+      +order-row
+      +order-row
+    +b.order-submit

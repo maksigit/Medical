@@ -44,3 +44,21 @@ mixin basePage(page)
 mixin svg-icon(name)
   svg(class="icon icon-" + name)
     use(xlink:href="images/_sprite.svg#" + name)
+
+mixin order-row (item)
+  +e.row
+    +e.cell._desc._number 1
+    +e.cell._desc._name(href ='#')
+      +e.img
+        img(src = "images/inb.png")
+      +e.img-desc Автоматический тонометр для людей с пониженным зрением B.Well WA-77 «Talking»
+    +e.cell._desc._count
+      +b.wrap-count
+        +e.center._mines -
+        +e.center._number 2
+        +e.center._plus +
+    +e.cell._desc._price
+      +e.price 4 000 Р
+      +e.count 2 000 х 2
+    +e.cell._desc._delete
+      +e.delete x
