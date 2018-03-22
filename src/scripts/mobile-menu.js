@@ -20,8 +20,8 @@ $matched.find("ul")
 
 var $listAdd = $(".js-catalog__list");
 $listAdd.find("li")
-    .addClass("js-catalog__item");
-$listAdd.find("li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4), li:nth-child(5), li:nth-child(6)").removeClass("js-catalog__item");
+    .addClass("js-catalog__item_hide");
+$listAdd.find("li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4), li:nth-child(5), li:nth-child(6)").removeClass("js-catalog__item_hide");
 // $(".js-catalog__list").each(function(index, value ) {
 //     var childrens = $(value).children('li')
 //     if (childrens.length > 6) {
@@ -34,7 +34,7 @@ $listAdd.find("li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4
 
 $(".js-more").on('click', function () {
     var thisCat = $(this).siblings(".js-catalog__list");
-    thisCat.find("li").slideToggle("js-catalog__item");
+    thisCat.find("li").slideToggle("js-catalog__item_hide");
 });
 
 /////////////// END LIST HIDE ////////////////
