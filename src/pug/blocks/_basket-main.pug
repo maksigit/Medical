@@ -16,6 +16,7 @@
         +e.cell._title._count количество
         +e.cell._title._price стоимость
         +e.cell._title._delete удалить
+      for
       +order-row
       +order-row
     +b.do-order
@@ -29,3 +30,38 @@
         +e.btns
           .btn.btn_size-small.btn_red войти и заказать
           .btn.btn_size-small.btn_red зарегистрироваться и заказать
+  section.register-i-order
+    h3 Зарегистрироваться и заказать:
+    +b.FORM.form-register(action="" method="post")
+      +b.wrap-input
+        +e.column
+          +e.LABEL.label Выберите регистрацию
+          +e.wrap-select
+            +e.SELECT.select()
+              option(selected='', value='Для юридических лиц') Для юридических лиц
+              option(value='Крокодил Гена') Крокодил Гена
+              option(value='Шапокляк') Шапокляк
+              option(value='Крыса Лариса') Крыса Лариса
+      .form-subtitle личные данные
+      +b.wrap-input
+        +e.column
+          +input('text', 'Фамилия', '*', ' ')
+          +input('text', 'Имя', '*', ' ')
+          +input('text', 'Отчество', '*', ' ')
+        +e.column
+          +input('number', 'БИК', '*', ' ')
+          +input('number', 'ИНН', '*', ' ')
+          +input('text', 'Название компании', ' ', ' ')
+      .form-subtitle юридический адрес
+      +b.wrap-input
+        +e.column
+          +input('text', 'Страна', '*', ' ')
+          +input('text', 'Город', '*', ' ')
+          +input('text', 'Улица', '*', ' ')
+        +e.column
+          +b.input-address
+            +input('number', 'Дом', '*', ' ')
+            +input('number', 'Корпус', ' ', ' ')
+            +input('number', 'Квартира/офис', '*', ' ')
+          +input('number', 'Телефон', '*', '(пожалуйста, укажите код города)')
+          +input('text', 'Название компании', ' ', ' ')

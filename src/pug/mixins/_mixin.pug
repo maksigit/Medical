@@ -62,3 +62,10 @@ mixin order-row (item)
       +e.count 2 000 х 2
     +e.cell._desc._delete
       +e.delete(href ='#') x
+
+mixin input (type, label, star, desc)
+  +b.LABEL.label= label
+    +e.SPAN.desc= desc
+    +e.SPAN.star= star
+    +e.INPUT.input(type= type)
+

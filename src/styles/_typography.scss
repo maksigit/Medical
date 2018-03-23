@@ -14,7 +14,11 @@ p {
 }
 
 h3 {
-  font: 3.0rem/44px $primary-font;
+  font: 2rem/25px $primary-font;
   color: $black-color;
   margin: 0;
+
+  @media (min-width: $screen-sm) {
+    font: 3.0rem/44px $primary-font;
+  }
 }
