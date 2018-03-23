@@ -125,7 +125,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    color: $black-color;
 
     @media (min-width: $screen-md) {
       position: static;
@@ -168,6 +168,78 @@
       border-bottom-right-radius: 3px;
       color: $white-color;
       cursor: pointer;
+    }
+  }
+}
+
+.do-order {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+  }
+
+  &__back {
+    display: flex;
+    flex-direction: column;
+    max-width: 790px;
+  }
+
+  &__del-all {
+    font: bold 1.4rem/24px $primary-font;
+    color: $lochmara-color;
+
+    &::before {
+      content: "\2715";
+      margin-right: 10px;
+      font-weight: normal;
+    }
+  }
+
+  &__register {
+    max-width: 500px;
+    margin-top: 20px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+    }
+  }
+
+  &__total {
+    font: bold 1.2rem/20px $primary-font;
+    color: $dusty-gray-color;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    margin-left: 20px;
+    font: bold 2.4rem/24px $primary-font;
+    color: $black-color;
+  }
+
+  &__desc {
+    font: bold 1.4rem/20px $primary-font;
+    color: $dusty-gray-color;
+    margin-top: 30px;
+  }
+
+  &__btns {
+    margin-top: 40px;
+    display: flex;
+    //flex-direction: column;
+
+    //@media (min-width: $screen-md) {
+    //  flex-direction: row;
+    //}
+    .btn {
+      text-align: center;
+    }
+
+    .btn:not(:first-child) {
+      margin-left: 20px;
     }
   }
 }

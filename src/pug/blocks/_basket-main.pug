@@ -18,4 +18,14 @@
         +e.cell._title._delete удалить
       +order-row
       +order-row
-    +b.order-submit
+    +b.do-order
+      +e.back
+        +e.del-all(href ='#') Удалить все
+        a.btn.btn_size-small.btn_blue.btn_loc.btn_arrow(href ='#') вернуться в каталог
+      +e.register
+        +e.total итого к оплате:
+          +e.SPAN.price 8 000 руб.
+        +e.P.desc Стоимость доставки не входит в стоимость товаров, уточните у менеджеров детали заказа.
+        +e.btns
+          .btn.btn_size-small.btn_red войти и заказать
+          .btn.btn_size-small.btn_red зарегистрироваться и заказать

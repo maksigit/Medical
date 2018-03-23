@@ -43,4 +43,13 @@
   &_loc-large {
     margin-top: 90px;
   }
+
+  &_arrow {
+    width: 225px;
+
+    &::before {
+      content: "\2190";
+      margin-right: 10px;
+    }
+  }
 }
