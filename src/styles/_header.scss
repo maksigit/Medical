@@ -148,40 +148,6 @@ html {
   }
 }
 
-.signin {
-  padding: 0 25px;
-  background: $white-color;
-  font: 1.4rem $primary-font;
-  color: #2f2f2f;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  width: 114px;
-  box-sizing: border-box;
-
-  &__cont {
-    margin-left: 10px;
-  }
-}
-
-.basket {
-  padding: 0 25px;
-  background: $carnation-color;
-  font: bold 1.4rem $primary-font;
-  color: $white-color;
-  height: 50px;
-  display: flex;
-  align-items: center;
-
-  &__cont {
-    margin-left: 10px;
-  }
-
-  &__counter {
-    margin-left: 15px;
-  }
-}
-
 .header-bottom {
   display: none;
 
@@ -266,5 +232,26 @@ html {
     img {
       padding-right: 9px;
     }
+  }
+}
+
+.icon-login {
+  color: $lochmara-color;
+  margin-right: 10px;
+}
+
+.icon-basket {
+  margin-right: 10px;
+}
+
+.counter-in-basket {
+  margin-left: 10px;
+}
+
+.cont-in-basket {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: block;
   }
 }

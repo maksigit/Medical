@@ -15,13 +15,13 @@ header.main-header
         button.form-search__button(type='submit')
           +svg-icon('search')
       .wrap-signin-basket
-        +b.A.signin(href='#')
+        .A.btn.btn_cblack.btn_size-small-top.btn_white(href='#')
           +svg-icon('login')
-          +e.SPAN.cont Вход
-        +b.A.basket(href='basket.html')
+          span.cont Вход
+        .A.btn.btn_size-small-top.btn_red.btn_align-centr(href='basket.html')
           +svg-icon('basket')
-          +e.SPAN.cont Моя корзина
-          +e.SPAN.counter 0
+          span.cont-in-basket Моя корзина
+          span.counter-in-basket 0
   .header-bottom
     .container-main
       a.logo(href='index.html')
