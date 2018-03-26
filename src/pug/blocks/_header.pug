@@ -6,9 +6,9 @@ header.main-header
         +e.line
         +e.line
       +b.UL.menu-header
-        each element in ["О компании", "Услуги", "Лицензии", "Доставка", "Контакты", "Прокат"]
+        each element in navMenu
           +e.LI.item
-            +e.A.link(href='#')=element
+            +e.A.link(href= element.link)=element.page
       .menu-header-close.js-menu-header-close
       form.form.form-search(action='', method='post')
         input.form-search__header(type='text', placeholder='Поиск по сайту')
