@@ -1,0 +1,159 @@
+.contacts {
+  padding-bottom: 60px;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 30px;
+    flex-direction: column;
+
+    @media (min-width: $screen-sm) {
+      flex-direction: row;
+    }
+
+    &_bgsea {
+      background: $seashell-color;
+    }
+
+    &_bgcream {
+      background: $coconut-cream-color;
+    }
+
+
+  }
+
+  &__item {
+    //max-width: 370px;
+    width: 100%;
+    padding: 0 5px;
+
+
+    &:last-child {
+      margin-top: 25px;
+
+      @media (min-width: $screen-sm) {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-sm) {
+      flex-direction: row;
+      margin-top: 0;
+      width: 50%;
+    }
+  }
+
+  &__address {
+    font: bold 1.6rem/24px $primary-font;
+  }
+
+  &__title {
+    color: $dusty-gray-color;
+    text-transform: uppercase;
+    font: bold 1.2rem/20px $primary-font;
+    margin-bottom: 25px;
+
+    &_laser {
+      color: $laser-color;
+    }
+  }
+
+  &__car {
+    font: 1.4rem/24px $primary-font;
+  }
+
+  &__number {
+    font: bold 1.4rem/24px $primary-font;
+  }
+
+  &__day {
+    color: $black-color;
+    font: 1.4rem/20px $primary-font;
+    display: flex;
+    justify-content: space-between;
+    width: 215px;
+
+    &:last-child {
+      color: $dusty-gray-color;
+    }
+  }
+
+
+
+  &__location {
+    width: 100%;
+    max-width: 835px;
+
+    iframe {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.contact-phone {
+  max-width: 300px;
+  margin: 35px 0 0 15px;
+
+  @media (min-width: $screen-md) {
+    margin: 0 0 0 15px;
+  }
+
+  &__title {
+    font: bold 1.2rem/20px $primary-font;
+    color: $dusty-gray-color;
+    text-transform: uppercase;
+  }
+
+  &__item {
+
+  }
+
+  &__list:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  &__function {
+    font: 1.4rem/24px $primary-font;
+    color: $black-color;
+  }
+
+  &__person {
+    font: 1.4rem/24px $primary-font;
+    color: $dusty-gray-color;
+    margin-top: 10px;
+  }
+
+  &__link {
+    margin-top: 15px;
+    font: bold 1.6rem/24px $primary-font;
+    color: $lochmara-color;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $screen-xlg) {
+      flex-direction: row;
+    }
+  }
+
+  &__mail {
+    font: 1.4rem/24px $primary-font;
+    color: $lochmara-color;
+    margin-left: 8px;
+  }
+}
+
+.icon-car {
+  color: $laser-color;
+}
