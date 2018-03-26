@@ -58,7 +58,7 @@
     font: bold 1.6rem/24px $primary-font;
   }
 
-  &__title {
+  &__title-con {
     color: $dusty-gray-color;
     text-transform: uppercase;
     font: bold 1.2rem/20px $primary-font;
@@ -110,7 +110,7 @@
     margin: 0 0 0 15px;
   }
 
-  &__title {
+  &__title-con {
     font: bold 1.2rem/20px $primary-font;
     color: $dusty-gray-color;
     text-transform: uppercase;
