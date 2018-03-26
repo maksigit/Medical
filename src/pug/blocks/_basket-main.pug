@@ -16,9 +16,24 @@
         +e.cell._title._count количество
         +e.cell._title._price стоимость
         +e.cell._title._delete удалить
-      for
-      +order-row
-      +order-row
+      -var max = 2
+      - for(var i = 1; i <= max; i++)
+        +e.row
+          +e.cell._desc._number= i
+          +e.cell._desc._name(href ='#')
+            +e.img
+              img(src = "images/inb.png")
+            +e.img-desc Автоматический тонометр для людей с пониженным зрением B.Well WA-77 «Talking»
+          +e.cell._desc._count
+            +b.wrap-count
+              +e.center._mines -
+              +e.center._number 2
+              +e.center._plus +
+          +e.cell._desc._price
+            +e.price 4 000 Р
+            +e.count 2 000 х 2
+          +e.cell._desc._delete
+            +e.delete(href ='#') x
     +b.do-order
       +e.back
         +e.del-all(href ='#') Удалить все
