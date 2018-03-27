@@ -31,7 +31,7 @@ mixin basePage(page)
   html(lang='en')
     include ../meta/_head
     body
-      include ../../images/_sprite.svg
+      include ../../images/sprite.svg
       include ../blocks/_header
       main
         if block
@@ -43,7 +43,7 @@ mixin basePage(page)
 
 mixin svg-icon(name)
   svg(class="icon icon-" + name)
-    use(xlink:href="images/_sprite.svg#" + name)
+    use(xlink:href="images/sprite.svg#" + name)
 
 mixin order-row (item)
   +e.row
