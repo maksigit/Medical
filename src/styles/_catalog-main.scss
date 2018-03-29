@@ -17,11 +17,23 @@
       content: '/';
       padding: 0 5px;
     }
+
+    &:last-child {
+      a {
+        color: $dusty-gray-color;
+      }
+    }
   }
 
   &__link {
     font: 1.2rem/24px $primary-font;
     color: $black-color;
+    transition: .4s;
+
+    &:hover {
+      color: $lochmara-color;
+    }
+
   }
 }
 
